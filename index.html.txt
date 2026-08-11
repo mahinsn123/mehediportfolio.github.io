@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD. Mehedi Hassan - Portfolio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b1120; /* Dark background color */
+            color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .card {
+            max-width: 500px;
+            width: 100%;
+            background: #111a2e; /* Card background color */
+            padding: 35px 25px;
+            border-radius: 16px;
+            border: 1px solid #1e293b;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #38bdf8; /* Cyan accent border */
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+        }
+        h1 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+        .dept {
+            color: #38bdf8;
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+        .section-title {
+            color: #818cf8; /* Light purple section heading */
+            font-size: 1.1rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: left;
+            border-bottom: 1px solid #1e293b;
+            padding-bottom: 5px;
+        }
+        p {
+            color: #94a3b8;
+            line-height: 1.6;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+        ul {
+            text-align: left;
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            color: #cbd5e1;
+            margin: 8px 0;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+        }
+        ul li::before {
+            content: "▹";
+            color: #10b981; /* Sea-green bullet points */
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 10px;
+        }
+        .btn-container {
+            margin-top: 25px;
+        }
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #10b981, #059669); /* Sea-green button gradient */
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+        }
+        .btn:hover {
+            background: linear-gradient(135deg, #059669, #047857);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(16, 185, 129, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <!-- Profile Picture -->
+    <img src="profile.jpg" alt="MD. Mehedi Hassan">
+
+    <!-- Name and Department -->
+    <h1>MD. Mehedi Hassan</h1>
+    <div class="dept">Department of CSE</div>
+
+    <!-- About Me Section -->
+    <div class="section-title">About Me</div>
+    <p>Passionate Computer Science and Engineering student with a strong interest in software development, database systems, and open-source technologies.</p>
+
+    <!-- Hobbies and Interests Section -->
+    <div class="section-title">Hobbies & Interests</div>
+    <ul>
+        <li>Software & Web Development</li>
+        <li>Linux System Administration</li>
+        <li>Video Editing & Content Creation</li>
+        <li>Playing Cricket</li>
+    </ul>
+
+    <!-- CV Download Button -->
+    <div class="btn-container">
+        <a href="CV.pdf" class="btn" target="_blank">View / Download CV</a>
+    </div>
+</div>
+
+</body>
+</html>
