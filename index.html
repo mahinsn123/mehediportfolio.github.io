@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mehedi. - Portfolio</title>
+    <title>MD. Mehedi Hassan - Portfolio</title>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -38,12 +38,12 @@
         nav {
             position: sticky;
             top: 0;
-            background: rgba(8, 13, 26, 0.85);
+            background: rgba(8, 13, 26, 0.9);
             backdrop-filter: blur(12px);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
+            padding: 18px 8%;
             border-bottom: 1px solid var(--card-border);
             z-index: 1000;
         }
@@ -60,13 +60,13 @@
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
-            margin-left: 25px;
-            font-size: 0.95rem;
+            margin-left: 20px;
+            font-size: 0.9rem;
             transition: 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--text-main);
+            color: var(--accent-cyan);
         }
 
         /* Container */
@@ -76,12 +76,12 @@
             padding: 0 24px;
         }
 
-        /* Hero Layout */
+        /* Hero Section */
         .hero-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 60px 0 40px;
+            padding: 50px 0 30px;
             gap: 40px;
         }
 
@@ -97,21 +97,21 @@
         }
 
         .hero-text h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 8px;
+            font-size: 2.7rem;
+            font-weight: 800;
+            margin-bottom: 6px;
             letter-spacing: -0.5px;
         }
 
         .hero-subtitle {
             color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 12px;
+            font-size: 1rem;
+            margin-bottom: 10px;
         }
 
         .typing-text {
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             margin-bottom: 25px;
         }
 
@@ -131,7 +131,7 @@
         .badges-row {
             display: flex;
             gap: 12px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             flex-wrap: wrap;
         }
 
@@ -154,11 +154,11 @@
             font-size: 0.75rem;
         }
 
-        /* Action Buttons & Social Links */
+        /* Action Buttons & Socials */
         .hero-actions {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
@@ -219,11 +219,11 @@
             color: #000;
         }
 
-        /* Hero Avatar Circular Graphic */
+        /* Avatar Box */
         .avatar-wrapper {
             position: relative;
-            width: 220px;
-            height: 220px;
+            width: 210px;
+            height: 210px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -244,8 +244,8 @@
         }
 
         .avatar-img-box {
-            width: 180px;
-            height: 180px;
+            width: 175px;
+            height: 175px;
             border-radius: 50%;
             overflow: hidden;
             border: 3px solid var(--accent-cyan);
@@ -259,7 +259,6 @@
             object-fit: cover;
         }
 
-        /* Floating Tech Icons on Circle */
         .tech-icon {
             position: absolute;
             background: var(--card-bg);
@@ -275,55 +274,108 @@
             z-index: 3;
         }
 
-        .icon-1 { top: 10px; right: 25px; }
-        .icon-2 { bottom: 20px; right: 10px; }
-        .icon-3 { bottom: 10px; left: 25px; }
-        .icon-4 { top: 30px; left: 10px; }
+        .icon-1 { top: 5px; right: 25px; }
+        .icon-2 { bottom: 15px; right: 10px; }
+        .icon-3 { bottom: 5px; left: 25px; }
+        .icon-4 { top: 25px; left: 10px; }
 
-        /* General Section Styling */
+        /* Section Heading with Icon */
         .section-box {
             margin-top: 50px;
         }
 
         .section-heading {
-            font-size: 1.5rem;
+            font-size: 1.45rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 12px;
+        }
+
+        .section-heading i {
+            color: var(--accent-cyan);
+            font-size: 1.3rem;
+            background: #1e293b;
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
         }
 
         .section-heading span {
             color: var(--accent-cyan);
         }
 
-        /* About Me Card */
-        .about-card {
+        /* Cards & Layouts */
+        .info-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            padding: 24px;
-            border-radius: 14px;
-            line-height: 1.7;
-            color: var(--text-muted);
-            font-size: 0.98rem;
+            padding: 22px;
+            border-radius: 12px;
+            position: relative;
+            margin-bottom: 16px;
         }
 
-        .about-card strong {
-            color: var(--accent-cyan);
-        }
-
-        /* Hobbies Section */
-        .hobbies-grid {
+        .grid-2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 16px;
         }
 
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .tag-pill {
+            background: #1e293b;
+            color: #cbd5e1;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            display: inline-block;
+            border: 1px solid #334155;
+        }
+
+        .tags-flex {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 10px 0;
+        }
+
+        .project-num {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #1e293b;
+        }
+
+        .link-btn {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 6px;
+            transition: 0.2s;
+        }
+
+        .link-btn:hover {
+            text-decoration: underline;
+            color: #38bdf8;
+        }
+
+        /* Hobbies Section */
         .hobby-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            padding: 22px 16px;
+            padding: 20px 16px;
             border-radius: 12px;
             text-align: center;
             transition: 0.3s;
@@ -337,75 +389,20 @@
         .hobby-card i {
             font-size: 1.5rem;
             color: var(--accent-cyan);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .hobby-card h4 {
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin-bottom: 4px;
             color: var(--text-main);
         }
 
         .hobby-card p {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
         }
 
-        /* Experience/Education & Projects Cards */
-        .cards-list {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .info-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            padding: 22px;
-            border-radius: 14px;
-            position: relative;
-        }
-
-        .project-num {
-            position: absolute;
-            top: 18px;
-            right: 22px;
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #1e293b;
-        }
-
-        .tag-pill {
-            background: #1e293b;
-            color: #d1d5db;
-            font-size: 0.78rem;
-            padding: 4px 10px;
-            border-radius: 6px;
-            display: inline-block;
-        }
-
-        .tags-flex {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin: 12px 0;
-        }
-
-        .link-btn {
-            color: var(--accent-cyan);
-            text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .link-btn:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Breakpoints */
         @media (max-width: 850px) {
             .hero-container {
                 flex-direction: column-reverse;
@@ -433,10 +430,12 @@
         <div class="logo">Mehedi<span>.</span></div>
         <div class="nav-links">
             <a href="#about">About</a>
-            <a href="#hobbies">Hobbies</a>
             <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#achievements">Achievements</a>
+            <a href="#activities">Activities</a>
+            <a href="#hobbies">Hobbies</a>
         </div>
     </nav>
 
@@ -447,7 +446,7 @@
             <div class="hero-text">
                 <div class="greeting">Hello, I'm</div>
                 <h1>MD. Mehedi Hassan</h1>
-                <div class="hero-subtitle">CSE Undergraduate at Bangladesh University of Professionals</div>
+                <div class="hero-subtitle">CSE Undergraduate at Bangladesh University of Professionals (BUP)</div>
                 <div class="typing-text">I am into <span id="typing">Web</span></div>
 
                 <!-- Badges -->
@@ -466,9 +465,11 @@
                     </div>
                 </div>
 
-                <!-- Action Buttons & Contacts -->
+                <!-- Actions -->
                 <div class="hero-actions">
-                    <a href="#" class="btn-cv"><i class="fa-solid fa-download"></i> Download CV</a>
+                    <a href="Final cv mehedi 3046_2.pdf" download="MD_Mehedi_Hassan_CV.pdf" class="btn-cv">
+                        <i class="fa-solid fa-download"></i> Download CV
+                    </a>
                     <a href="#projects" class="btn-projects"><i class="fa-brands fa-github"></i> Projects</a>
                     <a href="https://github.com/mahinsn123" target="_blank" class="social-icon"><i class="fa-brands fa-github"></i></a>
                     <a href="https://linkedin.com/in/mehedi-hassan-mahin" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -477,13 +478,11 @@
                 </div>
             </div>
 
-            <!-- Profile Graphic Right Side -->
             <div class="avatar-wrapper">
                 <div class="avatar-border"></div>
                 <div class="avatar-img-box">
                     <img src="profile.jpg" alt="MD. Mehedi Hassan">
                 </div>
-                <!-- Floating Icons -->
                 <div class="tech-icon icon-1"><i class="fa-brands fa-react"></i></div>
                 <div class="tech-icon icon-2"><i class="fa-brands fa-node-js"></i></div>
                 <div class="tech-icon icon-3"><i class="fa-solid fa-code"></i></div>
@@ -493,16 +492,238 @@
 
         <!-- About Me Section -->
         <section id="about" class="section-box">
-            <h2 class="section-heading">About <span>Me</span></h2>
-            <div class="about-card">
-                I am a <strong>CSE undergraduate at BUP</strong> passionate about <strong>Full-Stack Web Development, UI/UX Design, and Backend Architectures</strong>. I specialize in building high-performance web systems using <strong>React, Node.js, Spring Boot, and FastAPI</strong> alongside custom Figma UI design.
+            <h2 class="section-heading"><i class="fa-solid fa-user-astronaut"></i> About <span>Me</span></h2>
+            <div class="info-card" style="line-height: 1.75; color: var(--text-muted); font-size: 0.95rem;">
+                <p style="margin-bottom: 12px;">
+                    I am an ambitious and detail-oriented <strong style="color: var(--accent-cyan);">Computer Science and Engineering undergraduate at Bangladesh University of Professionals (BUP)</strong>. My core passion lies in building scalable Web Applications, robust RESTful APIs, and modern UI/UX designs.
+                </p>
+                <p style="margin-bottom: 12px;">
+                    With hands-on experience in full-stack web engineering (<strong style="color: var(--text-main);">React, Node.js, Spring Boot, FastAPI</strong>), desktop application development (<strong style="color: var(--text-main);">JavaFX, Java Swing, MySQL</strong>), and embedded systems (<strong style="color: var(--text-main);">Arduino, ESP32</strong>), I thrive on translating complex real-world problems into clean, efficient, and user-friendly software solutions.
+                </p>
+                <p>
+                    I enjoy participating in tech hackathons, refining compiler design concepts, customizing Linux environments, and continuously mastering modern web architectures.
+                </p>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section-box">
+            <h2 class="section-heading"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+            <div class="cards-list">
+                
+                <div class="info-card">
+                    <h3 style="font-size: 1.1rem;">Bachelor of Computer Science and Engineering</h3>
+                    <p style="color: var(--accent-cyan); font-size: 0.88rem; margin-top: 3px;">Bangladesh University of Professionals (BUP)</p>
+                    <p style="color: var(--text-muted); font-size: 0.82rem; margin-top: 4px;">Jan 2024 – Dec 2027 (Expected) • Dhaka, Bangladesh</p>
+                    <p style="color: #10b981; font-weight: 600; font-size: 0.88rem; margin-top: 6px;">CGPA: 3.52 / 4.00 (up to 4th semester)</p>
+                </div>
+
+                <div class="grid-2">
+                    <div class="info-card" style="margin-bottom: 0;">
+                        <h3 style="font-size: 1rem;">Higher Secondary Certificate (HSC)</h3>
+                        <p style="color: var(--accent-cyan); font-size: 0.85rem; margin-top: 3px;">Adamjee Cantonment College</p>
+                        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 4px;">2020 – 2022 • Group: Science</p>
+                        <p style="color: #10b981; font-weight: 600; font-size: 0.85rem; margin-top: 6px;">GPA: 5.00 / 5.00</p>
+                    </div>
+
+                    <div class="info-card" style="margin-bottom: 0;">
+                        <h3 style="font-size: 1rem;">Secondary School Certificate (SSC)</h3>
+                        <p style="color: var(--accent-cyan); font-size: 0.85rem; margin-top: 3px;">Qadirabad Cantonment Public School, Natore</p>
+                        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 4px;">2018 – 2020 • Group: Science</p>
+                        <p style="color: #10b981; font-weight: 600; font-size: 0.85rem; margin-top: 6px;">GPA: 5.00 / 5.00</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section id="skills" class="section-box">
+            <h2 class="section-heading"><i class="fa-solid fa-code"></i> Technical <span>Skills</span></h2>
+            <div class="info-card">
+                <div style="margin-bottom: 12px;">
+                    <strong style="color: var(--accent-cyan); font-size: 0.88rem; display: block; margin-bottom: 6px;">Programming Languages:</strong>
+                    <div class="tags-flex">
+                        <span class="tag-pill">C</span><span class="tag-pill">C++</span><span class="tag-pill">Java</span><span class="tag-pill">Python</span><span class="tag-pill">HTML</span><span class="tag-pill">CSS</span><span class="tag-pill">SQL</span>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 12px;">
+                    <strong style="color: var(--accent-cyan); font-size: 0.88rem; display: block; margin-bottom: 6px;">Frameworks & Web:</strong>
+                    <div class="tags-flex">
+                        <span class="tag-pill">React.js</span><span class="tag-pill">Node.js</span><span class="tag-pill">Spring Boot</span><span class="tag-pill">FastAPI</span><span class="tag-pill">Java Swing</span><span class="tag-pill">JavaFX</span>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 12px;">
+                    <strong style="color: var(--accent-cyan); font-size: 0.88rem; display: block; margin-bottom: 6px;">IoT & Embedded Systems:</strong>
+                    <div class="tags-flex">
+                        <span class="tag-pill">Arduino</span><span class="tag-pill">ESP32</span><span class="tag-pill">IR Sensors</span><span class="tag-pill">L298N</span>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 12px;">
+                    <strong style="color: var(--accent-cyan); font-size: 0.88rem; display: block; margin-bottom: 6px;">Design & UI/UX:</strong>
+                    <div class="tags-flex">
+                        <span class="tag-pill">Figma</span><span class="tag-pill">UI/UX Design</span><span class="tag-pill">Web Design</span>
+                    </div>
+                </div>
+
+                <div>
+                    <strong style="color: var(--accent-cyan); font-size: 0.88rem; display: block; margin-bottom: 6px;">Tools & Platforms:</strong>
+                    <div class="tags-flex">
+                        <span class="tag-pill">Git</span><span class="tag-pill">GitHub</span><span class="tag-pill">Linux (Ubuntu)</span><span class="tag-pill">VS Code</span><span class="tag-pill">MySQL</span><span class="tag-pill">MATLAB</span><span class="tag-pill">Docker</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-box">
+            <h2 class="section-heading"><i class="fa-solid fa-diagram-project"></i> Projects <span>(All 8)</span></h2>
+            <div class="cards-list">
+
+                <!-- 01 -->
+                <div class="info-card">
+                    <span class="project-num">01</span>
+                    <h3 style="font-size: 1.15rem;">Campus Lost & Found System</h3>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">Full-stack platform with passcode-based claim verification for recovering campus items.</p>
+                    <div class="tags-flex">
+                        <span class="tag-pill">React</span><span class="tag-pill">Spring Boot</span><span class="tag-pill">JPA</span><span class="tag-pill">REST API</span>
+                    </div>
+                    <a href="https://github.com/mahinsn123/campus-lost-and-found" target="_blank" class="link-btn"><i class="fa-brands fa-github"></i> View Source →</a>
+                </div>
+
+                <!-- 02 -->
+                <div class="info-card">
+                    <span class="project-num">02</span>
+                    <h3 style="font-size: 1.15rem;">team_Clueless (GenAI Web Application)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">Full-stack AI web app featuring Glassmorphism UI and Gemini 2.5-flash for fast reasoning.</p>
+                    <div class="tags-flex">
+                        <span class="tag-pill">React</span><span class="tag-pill">Node.js</span><span class="tag-pill">Express</span><span class="tag-pill">GenAI</span>
+                    </div>
+                    <a href="https://github.com/Fahim-p2062/team_Cluless" target="_blank" class="link-btn"><i class="fa-brands fa-github"></i> View Source →</a>
+                </div>
+
+                <!-- 03 -->
+                <div class="info-card">
+                    <span class="project-num">03</span>
+                    <h3 style="font-size: 1.15rem;">CoWork - Coworking Space Booking API</h3>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">RESTful multi-tenant API with JWT authentication for booking rooms and managing staff.</p>
+                    <div class="tags-flex">
+                        <span class="tag-pill">Python</span><span class="tag-pill">FastAPI</span><span class="tag-pill">JWT</span><span class="tag-pill">Docker</span>
+                    </div>
+                    <!-- নির্দিষ্ট লিঙ্ক না থাকায় বাটনে লিঙ্ক নেই -->
+                </div>
+
+                <!-- 04 -->
+                <div class="info-card">
+                    <span class="project-num">04</span>
+                    <h3 style="font-size: 1.15rem;">Wi-Fi Management System</h3>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">Desktop management tool with user dashboard to track active plans, usage, and payments.</p>
+                    <div class="tags-flex">
+                        <span class="tag-pill">Java Swing</span><span class="tag-pill">JDBC</span><span class="tag-pill">MySQL</span>
+                    </div>
+                    <a href="https://github.com/Istiack-102/Wi-Fi-Management-System" target="_blank" class="link-btn"><i class="fa-brands fa-github"></i> View Source →</a>
+                </div>
+
+                <!-- 05 -->
+                <div class="info-card">
+                    <span class="project-num">05</span>
+                    <h3 style="font-size: 1.15rem;">IFinance</h3>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">Desktop-based financial application with JavaFX modern UI and MySQL database storage.</p>
+                    <div class="tags-flex">
+                        <span class="tag-pill">Java</span><span class="tag-pill">JavaFX</span><span class="tag-pill">JDBC</span><span class="tag-pill">MySQL</span>
+                    </div>
+                    <a href="https://github.com/asmraiyan-crp/IFinance" target="_blank" class="link-btn"><i class="fa-brands fa-github"></i> View Source →</a>
+                </div>
+
+                <!-- 06 -->
+                <div class="info-card">
+                    <span class="project-num">06</span>
+                    <h3 style="font-size: 1.15rem;">C-Like Expression Compiler</h3>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">C-like expression compiler for lexical analysis, syntax parsing, symbol table, and error handling.</p>
+                    <div class="tags-flex">
+                        <span class="tag-pill">C</span><span class="tag-pill">FlexBison</span><span class="tag-pill">Linux</span>
+                    </div>
+                    <!-- নির্দিষ্ট লিঙ্ক না থাকায় বাটনে লিঙ্ক নেই -->
+                </div>
+
+                <!-- 07 -->
+                <div class="info-card">
+                    <span class="project-num">07</span>
+                    <h3 style="font-size: 1.15rem;">Line Following Robot Using Arduino</h3>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">Autonomous robot using IR sensor array for path tracking and ultrasonic sensor for obstacles.</p>
+                    <div class="tags-flex">
+                        <span class="tag-pill">Arduino / C++</span><span class="tag-pill">IR Sensors</span><span class="tag-pill">L298N</span>
+                    </div>
+                    <!-- নির্দিষ্ট লিঙ্ক না থাকায় বাটনে লিঙ্ক নেই -->
+                </div>
+
+                <!-- 08 -->
+                <div class="info-card">
+                    <span class="project-num">08</span>
+                    <h3 style="font-size: 1.15rem;">Database-Integrated Bill Management System</h3>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">Desktop bill management system with admin panel for generation and payment dashboards.</p>
+                    <div class="tags-flex">
+                        <span class="tag-pill">Java Swing</span><span class="tag-pill">JDBC</span><span class="tag-pill">MySQL</span><span class="tag-pill">UI/UX</span>
+                    </div>
+                    <!-- নির্দিষ্ট লিঙ্ক না থাকায় বাটনে লিঙ্ক নেই -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="section-box">
+            <h2 class="section-heading"><i class="fa-solid fa-trophy"></i> Achievements & <span>Certifications</span></h2>
+            <div class="cards-list">
+
+                <div class="info-card">
+                    <span style="color: var(--accent-cyan); font-size: 0.8rem; font-weight: 600;">Participant</span>
+                    <h3 style="font-size: 1.05rem; margin-top: 2px;"><i class="fa-solid fa-award" style="color: #f59e0b;"></i> IUT ICT Fest Hackathon 2026</h3>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px; margin-bottom: 8px;">Earned Certificate of Participation in software hackathon.</p>
+                    <a href="https://github.com/Fahim-p2062/ICT_Fest_Hackathon_Preliminary_byBUP_blocker" target="_blank" class="link-btn"><i class="fa-brands fa-github"></i> Hackathon Project Repo →</a>
+                </div>
+
+                <div class="info-card">
+                    <span style="color: var(--accent-cyan); font-size: 0.8rem; font-weight: 600;">Round 2 Qualifier</span>
+                    <h3 style="font-size: 1.05rem; margin-top: 2px;"><i class="fa-solid fa-medal" style="color: #f59e0b;"></i> MARXCELLENCE 2026</h3>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">Advanced to Round 2 in national business case competition.</p>
+                </div>
+
+                <div class="info-card">
+                    <span style="color: var(--accent-cyan); font-size: 0.8rem; font-weight: 600;">Certified</span>
+                    <h3 style="font-size: 1.05rem; margin-top: 2px;"><i class="fa-solid fa-certificate" style="color: #10b981;"></i> Java (Basic) Certification - HackerRank</h3>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">Validated core OOP, Data Structures, and Exception Handling skills.</p>
+                </div>
+
+                <div class="info-card">
+                    <span style="color: var(--accent-cyan); font-size: 0.8rem; font-weight: 600;">Participant</span>
+                    <h3 style="font-size: 1.05rem; margin-top: 2px;"><i class="fa-solid fa-certificate" style="color: #3b82f6;"></i> 3 Zero Business Competition</h3>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">Awarded Certificate of Participation.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Co-curricular Activities Section -->
+        <section id="activities" class="section-box">
+            <h2 class="section-heading"><i class="fa-solid fa-people-group"></i> Co-curricular <span>Activities</span></h2>
+            <div class="info-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                    <h3 style="font-size: 1.1rem;">BUP Computer Club</h3>
+                    <span style="color: var(--accent-cyan); font-size: 0.85rem; font-weight: 600;">2025 – Present</span>
+                </div>
+                <p style="color: #10b981; font-size: 0.88rem; margin: 4px 0;">General Member</p>
+                <p style="color: var(--text-muted); font-size: 0.88rem;">Actively participating in tech workshops, competitive programming contests, and club-organized tech events.</p>
             </div>
         </section>
 
         <!-- Hobbies & Interests Section -->
         <section id="hobbies" class="section-box">
-            <h2 class="section-heading">Hobbies & <span>Interests</span></h2>
-            <div class="hobbies-grid">
+            <h2 class="section-heading"><i class="fa-solid fa-heart"></i> Hobbies & <span>Interests</span></h2>
+            <div class="grid-3">
                 
                 <div class="hobby-card">
                     <i class="fa-solid fa-baseball-bat-ball"></i>
@@ -531,139 +752,11 @@
             </div>
         </section>
 
-        <!-- Education Section -->
-        <section id="education" class="section-box">
-            <h2 class="section-heading"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
-            <div class="cards-list">
-                
-                <div class="info-card">
-                    <h3 style="font-size: 1.1rem;">Bachelor of Computer Science and Engineering</h3>
-                    <p style="color: var(--accent-cyan); font-size: 0.9rem; margin-top: 3px;">Bangladesh University of Professionals (BUP)</p>
-                    <p style="color: var(--text-muted); font-size: 0.82rem; margin-top: 5px;">Jan 2024 – Dec 2027 (Expected) • Dhaka, Bangladesh</p>
-                    <p style="color: #10b981; font-weight: 600; font-size: 0.88rem; margin-top: 6px;">CGPA: 3.52 / 4.00 (up to 4th semester)</p>
-                </div>
-
-                <div class="info-card">
-                    <h3 style="font-size: 1.1rem;">Higher Secondary Certificate (HSC)</h3>
-                    <p style="color: var(--accent-cyan); font-size: 0.9rem; margin-top: 3px;">Adamjee Cantonment College</p>
-                    <p style="color: var(--text-muted); font-size: 0.82rem; margin-top: 5px;">2020 – 2022 • Dhaka, Bangladesh</p>
-                    <p style="color: #10b981; font-weight: 600; font-size: 0.88rem; margin-top: 6px;">GPA: 5.00 / 5.00 (Science)</p>
-                </div>
-
-                <div class="info-card">
-                    <h3 style="font-size: 1.1rem;">Secondary School Certificate (SSC)</h3>
-                    <p style="color: var(--accent-cyan); font-size: 0.9rem; margin-top: 3px;">Qadirabad Cantonment Public School</p>
-                    <p style="color: var(--text-muted); font-size: 0.82rem; margin-top: 5px;">2018 – 2020 • Natore, Bangladesh</p>
-                    <p style="color: #10b981; font-weight: 600; font-size: 0.88rem; margin-top: 6px;">GPA: 5.00 / 5.00 (Science)</p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Technical Skills Section -->
-        <section class="section-box">
-            <h2 class="section-heading"><i class="fa-solid fa-code"></i> Technical Skills</h2>
-            <div class="info-card">
-                <div style="margin-bottom: 12px;">
-                    <strong style="color: var(--accent-cyan); font-size: 0.9rem;">Languages:</strong>
-                    <div class="tags-flex">
-                        <span class="tag-pill">C</span><span class="tag-pill">C++</span><span class="tag-pill">Java</span><span class="tag-pill">Python</span><span class="tag-pill">HTML</span><span class="tag-pill">CSS</span><span class="tag-pill">SQL</span>
-                    </div>
-                </div>
-
-                <div style="margin-bottom: 12px;">
-                    <strong style="color: var(--accent-cyan); font-size: 0.9rem;">Frameworks:</strong>
-                    <div class="tags-flex">
-                        <span class="tag-pill">React.js</span><span class="tag-pill">Node.js</span><span class="tag-pill">Java Swing</span>
-                    </div>
-                </div>
-
-                <div>
-                    <strong style="color: var(--accent-cyan); font-size: 0.9rem;">Tools & Platforms:</strong>
-                    <div class="tags-flex">
-                        <span class="tag-pill">Git</span><span class="tag-pill">GitHub</span><span class="tag-pill">Linux (Ubuntu)</span><span class="tag-pill">VS Code</span><span class="tag-pill">MySQL</span><span class="tag-pill">MATLAB</span><span class="tag-pill">Figma</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Projects Section -->
-        <section id="projects" class="section-box">
-            <h2 class="section-heading"><i class="fa-solid fa-diagram-project"></i> Featured Projects</h2>
-            <div class="cards-list">
-
-                <div class="info-card">
-                    <span class="project-num">01</span>
-                    <div style="color: #10b981; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Web Application</div>
-                    <h3 style="font-size: 1.2rem; margin: 4px 0 8px;">Campus Lost & Found System</h3>
-                    <p style="color: var(--text-muted); font-size: 0.88rem;">Full-stack platform with passcode-based claim verification for recovering campus items.</p>
-                    <div class="tags-flex">
-                        <span class="tag-pill">React</span><span class="tag-pill">Spring Boot</span><span class="tag-pill">JPA</span><span class="tag-pill">REST API</span>
-                    </div>
-                    <a href="https://github.com/mahinsn123" target="_blank" class="link-btn"><i class="fa-brands fa-github"></i> View Source →</a>
-                </div>
-
-                <div class="info-card">
-                    <span class="project-num">02</span>
-                    <div style="color: #10b981; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Artificial Intelligence</div>
-                    <h3 style="font-size: 1.2rem; margin: 4px 0 8px;">team_Clueless (GenAI Web App)</h3>
-                    <p style="color: var(--text-muted); font-size: 0.88rem;">Full-stack AI web app featuring Glassmorphism UI and Gemini 2.5-flash integration.</p>
-                    <div class="tags-flex">
-                        <span class="tag-pill">React</span><span class="tag-pill">Node.js</span><span class="tag-pill">Express</span><span class="tag-pill">GenAI</span>
-                    </div>
-                    <a href="https://github.com/mahinsn123" target="_blank" class="link-btn"><i class="fa-brands fa-github"></i> View Source →</a>
-                </div>
-
-                <div class="info-card">
-                    <span class="project-num">03</span>
-                    <div style="color: #10b981; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">API & Backend</div>
-                    <h3 style="font-size: 1.2rem; margin: 4px 0 8px;">CoWork - Coworking Space Booking API</h3>
-                    <p style="color: var(--text-muted); font-size: 0.88rem;">RESTful multi-tenant API with JWT authentication for booking rooms and managing staff.</p>
-                    <div class="tags-flex">
-                        <span class="tag-pill">Python</span><span class="tag-pill">FastAPI</span><span class="tag-pill">JWT</span><span class="tag-pill">Docker</span>
-                    </div>
-                    <a href="https://github.com/mahinsn123" target="_blank" class="link-btn"><i class="fa-brands fa-github"></i> View Source →</a>
-                </div>
-
-                <div class="info-card">
-                    <span class="project-num">04</span>
-                    <div style="color: #10b981; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Desktop Application</div>
-                    <h3 style="font-size: 1.2rem; margin: 4px 0 8px;">Wi-Fi Management System</h3>
-                    <p style="color: var(--text-muted); font-size: 0.88rem;">Desktop management tool with user dashboard to track active plans, usage, and payments.</p>
-                    <div class="tags-flex">
-                        <span class="tag-pill">Java Swing</span><span class="tag-pill">JDBC</span><span class="tag-pill">MySQL</span>
-                    </div>
-                    <a href="https://github.com/mahinsn123" target="_blank" class="link-btn"><i class="fa-brands fa-github"></i> View Source →</a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Achievements Section -->
-        <section id="achievements" class="section-box">
-            <h2 class="section-heading"><i class="fa-solid fa-trophy"></i> Achievements</h2>
-            <div class="cards-list">
-
-                <div class="info-card">
-                    <span style="color: var(--accent-cyan); font-size: 0.8rem;">2026</span>
-                    <h3 style="font-size: 1.1rem; margin-top: 4px;"><i class="fa-solid fa-award" style="color: #f59e0b;"></i> IUT ICT Fest Hackathon 2026</h3>
-                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">Earned Certificate of Participation in nationwide software hackathon.</p>
-                </div>
-
-                <div class="info-card">
-                    <span style="color: var(--accent-cyan); font-size: 0.8rem;">2026</span>
-                    <h3 style="font-size: 1.1rem; margin-top: 4px;"><i class="fa-solid fa-medal" style="color: #f59e0b;"></i> MARXCELLENCE 2026 — Round 2 Qualifier</h3>
-                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">Advanced to Round 2 in national business case competition.</p>
-                </div>
-
-            </div>
-        </section>
-
     </div>
 
-    <!-- Simple Script for Typing Effect -->
+    <!-- Typing Effect Script -->
     <script>
-        const words = ["Web", "UI/UX", "Full-Stack", "Backend"];
+        const words = ["Web Development", "UI/UX Design", "Full-Stack System", "Backend Architecture"];
         let i = 0;
         let timer;
 
@@ -676,7 +769,7 @@
                     setTimeout(deletingEffect, 2000);
                     return false;
                 }
-                timer = setTimeout(loopTyping, 150);
+                timer = setTimeout(loopTyping, 120);
             };
             loopTyping();
         }
@@ -696,7 +789,7 @@
                     typingEffect();
                     return false;
                 }
-                timer = setTimeout(loopDeleting, 100);
+                timer = setTimeout(loopDeleting, 80);
             };
             loopDeleting();
         }
