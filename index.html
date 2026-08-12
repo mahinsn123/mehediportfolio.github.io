@@ -15,49 +15,50 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Inter', sans-serif;
             background-color: #080d1a;
             color: #e2e8f0;
-            height: 100vh;
-            max-height: 100vh;
-            overflow: hidden; /* স্ক্রোলিং সম্পূর্ণ বন্ধ */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            min-height: 100vh;
+            overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 15% 30%, rgba(56, 189, 248, 0.08) 0%, transparent 45%),
-                radial-gradient(circle at 85% 70%, rgba(129, 140, 248, 0.08) 0%, transparent 45%);
-            padding: 0 6% 15px;
+                radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 60%, rgba(129, 140, 248, 0.08) 0%, transparent 40%);
         }
 
         /* Navbar Style */
         header {
             width: 100%;
-            padding: 15px 0;
+            padding: 18px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: rgba(8, 13, 26, 0.85);
+            backdrop-filter: blur(12px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .logo {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: #ffffff;
             text-decoration: none;
         }
 
-        .logo span {
-            color: #38bdf8;
-        }
+        .logo span { color: #38bdf8; }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 20px;
+            gap: 22px;
         }
 
         nav ul li a {
@@ -68,50 +69,66 @@
             transition: color 0.3s ease;
         }
 
-        nav ul li a:hover {
-            color: #38bdf8;
+        nav ul li a:hover { color: #38bdf8; }
+
+        /* Section Layouts */
+        section {
+            padding: 90px 8% 40px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 35px;
+            color: #ffffff;
+        }
+
+        .section-title span { color: #38bdf8; }
 
         /* --- HERO SECTION --- */
         .hero {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 20px;
+            min-height: 85vh;
+            padding-top: 100px;
         }
 
-        .hero-content {
-            max-width: 550px;
-        }
+        .hero-content { max-width: 600px; }
 
         .greeting {
             color: #818cf8;
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             font-weight: 600;
+            margin-bottom: 8px;
         }
 
         .name {
             font-family: 'Poppins', sans-serif;
-            font-size: 2.3rem;
+            font-size: 3.2rem;
             font-weight: 800;
             line-height: 1.1;
-            margin: 4px 0 6px;
+            margin-bottom: 12px;
             background: linear-gradient(135deg, #ffffff 30%, #38bdf8 80%, #818cf8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .subtitle {
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             color: #cbd5e1;
             font-weight: 500;
-            margin-bottom: 4px;
+            margin-bottom: 8px;
         }
 
         .dynamic-text {
-            font-size: 0.9rem;
+            font-size: 1.05rem;
             color: #94a3b8;
-            margin-bottom: 12px;
+            margin-bottom: 20px;
         }
 
         .dynamic-text .highlight {
@@ -121,78 +138,88 @@
             padding-right: 4px;
         }
 
-        /* Highlights / Stats Badge */
         .stats-group {
             display: flex;
-            gap: 10px;
-            margin-bottom: 12px;
+            gap: 15px;
+            margin-bottom: 25px;
         }
 
         .stat-card {
             background: rgba(17, 26, 46, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 6px 12px;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
+            padding: 8px 16px;
+            border-radius: 10px;
         }
 
         .stat-val {
             font-family: 'Poppins', sans-serif;
-            font-size: 0.9rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #38bdf8;
         }
 
         .stat-lbl {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             color: #64748b;
         }
 
-        /* Buttons Container */
         .btn-group {
             display: flex;
-            gap: 12px;
+            gap: 15px;
             align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
         }
 
         .btn-primary {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 8px 18px;
+            gap: 8px;
+            padding: 10px 24px;
             background: linear-gradient(135deg, #10b981, #059669);
             color: #ffffff;
             text-decoration: none;
-            border-radius: 20px;
+            border-radius: 30px;
             font-weight: 600;
-            font-size: 0.82rem;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
         }
 
         .btn-secondary {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 8px 16px;
+            gap: 8px;
+            padding: 10px 22px;
             background: rgba(30, 41, 59, 0.8);
             color: #e2e8f0;
             text-decoration: none;
-            border-radius: 20px;
+            border-radius: 30px;
             font-weight: 500;
-            font-size: 0.82rem;
+            font-size: 0.9rem;
             border: 1px solid #334155;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(51, 65, 85, 0.9);
+            border-color: #38bdf8;
+            color: #ffffff;
         }
 
         .social-links {
             display: flex;
-            gap: 8px;
-            margin-left: 5px;
+            gap: 12px;
         }
 
         .social-icon {
-            width: 32px;
-            height: 32px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             background: rgba(30, 41, 59, 0.6);
             border: 1px solid #334155;
@@ -201,14 +228,21 @@
             justify-content: center;
             color: #94a3b8;
             text-decoration: none;
-            font-size: 0.85rem;
+            transition: all 0.3s ease;
         }
 
-        /* Right Hero Profile Image */
+        .social-icon:hover {
+            color: #38bdf8;
+            border-color: #38bdf8;
+            transform: translateY(-3px);
+            background: rgba(56, 189, 248, 0.1);
+        }
+
+        /* Right Hero Orbit Profile */
         .hero-image-wrapper {
             position: relative;
-            width: 200px;
-            height: 200px;
+            width: 320px;
+            height: 320px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -230,15 +264,15 @@
 
         .tech-badge {
             position: absolute;
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background: #111a2e;
             border: 1px solid #1e293b;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.85rem;
+            font-size: 1rem;
         }
 
         .badge-1 { top: 0; left: 50%; transform: translate(-50%, -50%); color: #ea4c89; }
@@ -247,11 +281,12 @@
         .badge-4 { top: 50%; left: 0; transform: translate(-50%, -50%); color: #f04438; }
 
         .profile-img-container {
-            width: 150px;
-            height: 150px;
+            width: 240px;
+            height: 240px;
             border-radius: 50%;
-            padding: 4px;
+            padding: 5px;
             background: linear-gradient(135deg, #38bdf8, #818cf8, #10b981);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
         }
 
         .profile-img-container img {
@@ -259,79 +294,312 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #080d1a;
+            border: 4px solid #080d1a;
         }
 
-        /* --- ABOUT ME SECTION (COMPACT & SHORT) --- */
-        .about-section {
+        /* --- ABOUT ME SECTION --- */
+        .about-card {
             background: rgba(17, 26, 46, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 12px 20px;
+            border-radius: 16px;
+            padding: 35px;
+            line-height: 1.8;
+            color: #cbd5e1;
+            font-size: 0.98rem;
         }
 
-        .about-title {
+        .about-card strong { color: #38bdf8; }
+
+        /* --- EDUCATION SECTION --- */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .edu-card {
+            background: rgba(17, 26, 46, 0.5);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            border-radius: 16px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .edu-card:hover {
+            border-color: #38bdf8;
+            transform: translateY(-5px);
+            background: rgba(17, 26, 46, 0.8);
+        }
+
+        .edu-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .edu-card h3 {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .edu-inst {
+            color: #818cf8;
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+
+        .edu-date {
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .edu-grade {
+            color: #10b981;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+
+        .edu-loc {
+            color: #94a3b8;
+            font-size: 0.8rem;
+        }
+
+        /* --- TECHNICAL SKILLS SECTION --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: rgba(17, 26, 46, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 14px;
+            padding: 22px;
+        }
+
+        .skill-card h3 {
+            font-size: 1.05rem;
+            color: #38bdf8;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* --- FEATURED PROJECTS SECTION --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 22px;
+        }
+
+        .project-card {
+            background: rgba(17, 26, 46, 0.5);
+            border: 1px solid rgba(56, 189, 248, 0.12);
+            border-radius: 16px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: #38bdf8;
+            transform: translateY(-5px);
+            background: rgba(17, 26, 46, 0.8);
+        }
+
+        .project-number {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.08);
+        }
+
+        .project-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .project-desc {
+            color: #94a3b8;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 18px;
+        }
+
+        .project-tag {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .project-link {
+            color: #38bdf8;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.2s ease;
+        }
+
+        .project-link:hover { gap: 10px; }
+
+        /* --- ACHIEVEMENTS SECTION --- */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .achieve-card {
+            background: rgba(17, 26, 46, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 14px;
+            padding: 22px;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+        }
+
+        .achieve-card:hover {
+            border-color: #38bdf8;
+            transform: translateY(-3px);
+        }
+
+        .achieve-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .achieve-info h3 {
+            font-size: 1rem;
             color: #ffffff;
             margin-bottom: 4px;
         }
 
-        .about-title span { color: #38bdf8; }
-
-        .about-text {
-            color: #cbd5e1;
-            font-size: 0.83rem;
+        .achieve-info p {
+            color: #94a3b8;
+            font-size: 0.82rem;
             line-height: 1.4;
         }
 
-        .about-text strong {
-            color: #38bdf8;
-        }
-
-        /* --- HOBBIES SECTION (COMPACT) --- */
-        .hobbies-section {
-            margin-bottom: 5px;
-        }
-
-        .hobbies-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.1rem;
-            color: #ffffff;
-            margin-bottom: 8px;
-        }
-
-        .hobbies-title span { color: #38bdf8; }
-
+        /* --- HOBBIES SECTION --- */
         .hobbies-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
         }
 
         .hobby-card {
             background: rgba(17, 26, 46, 0.5);
-            border: 1px solid rgba(56, 189, 248, 0.15);
-            padding: 10px;
-            border-radius: 8px;
+            border: 1px solid rgba(56, 189, 248, 0.12);
+            padding: 22px;
+            border-radius: 14px;
             text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .hobby-card:hover {
+            border-color: #38bdf8;
+            transform: translateY(-4px);
+            background: rgba(17, 26, 46, 0.8);
         }
 
         .hobby-card i {
-            font-size: 1.2rem;
+            font-size: 1.8rem;
             color: #38bdf8;
-            margin-bottom: 4px;
+            margin-bottom: 12px;
         }
 
         .hobby-card h3 {
-            font-size: 0.8rem;
+            font-size: 1rem;
             color: #ffffff;
-            margin-bottom: 2px;
+            margin-bottom: 6px;
         }
 
         .hobby-card p {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             color: #94a3b8;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 992px) {
+            header { padding: 15px 5%; }
+            nav { display: none; }
+            section { padding: 70px 5% 30px; }
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 30px;
+                padding-top: 80px;
+            }
+            .hero-content { max-width: 100%; }
+            .name { font-size: 2.4rem; }
+            .stats-group, .btn-group, .social-links { justify-content: center; }
+            .hero-image-wrapper { width: 260px; height: 260px; }
+            .profile-img-container { width: 190px; height: 190px; }
         }
     </style>
 </head>
@@ -342,50 +610,50 @@
         <a href="#" class="logo">Mehedi<span>.</span></a>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Hobbies</a></li>
-                <li><a href="CV.pdf" target="_blank">CV</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- 1. HERO SECTION -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-content">
             <div class="greeting">Hello, I'm</div>
             <h1 class="name">MD. Mehedi Hassan</h1>
-            <div class="subtitle">CSE Undergraduate at Bangladesh University of Professionals</div>
+            <div class="subtitle">CSE Undergraduate at Bangladesh University of Professionals (BUP)</div>
             
             <div class="dynamic-text">
                 I am into <span class="highlight" id="typewriter"></span>
             </div>
 
-            <!-- Quick Highlights -->
             <div class="stats-group">
                 <div class="stat-card">
                     <span class="stat-val">BUP CSE</span>
-                    <span class="stat-lbl">Department</span>
+                    <span class="stat-lbl">2024 - 2027</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-val">8+</span>
                     <span class="stat-lbl">Projects Built</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-val">UI/UX & Web</span>
-                    <span class="stat-lbl">Primary Focus</span>
+                    <span class="stat-val">Full-Stack</span>
+                    <span class="stat-lbl">& UI/UX Focus</span>
                 </div>
             </div>
 
-            <!-- Action Buttons & Socials -->
             <div class="btn-group">
                 <a href="CV.pdf" class="btn-primary" target="_blank">
                     <i class="fa-solid fa-download"></i> Download CV
                 </a>
                 <a href="https://github.com/mahinsn123" class="btn-secondary" target="_blank">
-                    <i class="fa-brands fa-github"></i> Projects
+                    <i class="fa-brands fa-github"></i> GitHub Profile
                 </a>
-                
                 <div class="social-links">
                     <a href="https://github.com/mahinsn123" class="social-icon" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/mehedi-hassan-mahin-403116331/" class="social-icon" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -394,52 +662,333 @@
             </div>
         </div>
 
-        <!-- Right Profile Image -->
         <div class="hero-image-wrapper">
             <div class="orbit-ring">
-                <div class="tech-badge badge-1"><i class="fa-brands fa-figma"></i></div>
-                <div class="tech-badge badge-2"><i class="fa-brands fa-react"></i></div>
-                <div class="tech-badge badge-3"><i class="fa-brands fa-python"></i></div>
-                <div class="tech-badge badge-4"><i class="fa-solid fa-code"></i></div>
+                <div class="tech-badge badge-1" title="Figma"><i class="fa-brands fa-figma"></i></div>
+                <div class="tech-badge badge-2" title="React"><i class="fa-brands fa-react"></i></div>
+                <div class="tech-badge badge-3" title="Python"><i class="fa-brands fa-python"></i></div>
+                <div class="tech-badge badge-4" title="Java & C++"><i class="fa-solid fa-code"></i></div>
             </div>
-            
             <div class="profile-img-container">
                 <img src="profile.jpg" alt="MD. Mehedi Hassan">
             </div>
         </div>
     </section>
 
-    <!-- 2. SHORT & COMPACT ABOUT ME SECTION -->
-    <section class="about-section">
-        <h2 class="about-title">About <span>Me</span></h2>
-        <p class="about-text">
-            I am a <strong>CSE undergraduate at BUP</strong> passionate about <strong>Full-Stack Web Development, UI/UX Design, and Backend Architectures</strong>. I specialize in building high-performance web systems using <strong>React, Node.js, Spring Boot, and FastAPI</strong> alongside custom Figma UI design.
-        </p>
+    <!-- 2. ABOUT ME SECTION -->
+    <section id="about">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="about-card">
+            I am <strong>MD. Mehedi Hassan</strong>, a Computer Science and Engineering undergraduate at <strong>Bangladesh University of Professionals (BUP)</strong>. My technical journey is driven by a passion for building robust full-stack web applications, scalable backend microservices, and modern UI/UX interfaces. 
+            <br><br>
+            With strong expertise in <strong>React.js, Node.js, Spring Boot, FastAPI, and C/C++</strong>, I enjoy solving real-world problems through clean code and database architecture. Beyond academic excellence, I actively participate in hackathons, business case competitions, and competitive workshops to continuously expand my problem-solving capabilities.
+        </div>
     </section>
 
-    <!-- 3. HOBBIES & INTERESTS SECTION -->
-    <section class="hobbies-section">
-        <h2 class="hobbies-title">Hobbies & <span>Interests</span></h2>
+    <!-- 3. EDUCATION SECTION -->
+    <section id="education">
+        <h2 class="section-title">Academic <span>Education</span></h2>
+        <div class="education-grid">
+            
+            <div class="edu-card">
+                <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>Bachelor of CSE</h3>
+                <div class="edu-inst">Bangladesh University of Professionals (BUP)</div>
+                <div class="edu-date">Jan 2024 – Dec 2027 (Expected)</div>
+                <div class="edu-grade">CGPA: 3.52 / 4.00 (Up to 4th semester)</div>
+                <div class="edu-loc"><i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh</div>
+            </div>
+
+            <div class="edu-card">
+                <div class="edu-icon"><i class="fa-solid fa-school"></i></div>
+                <h3>Higher Secondary Certificate (HSC)</h3>
+                <div class="edu-inst">Adamjee Cantonment College</div>
+                <div class="edu-date">2020 – 2022</div>
+                <div class="edu-grade">GPA: 5.00 / 5.00 (Science)</div>
+                <div class="edu-loc"><i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh</div>
+            </div>
+
+            <div class="edu-card">
+                <div class="edu-icon"><i class="fa-solid fa-book-bookmark"></i></div>
+                <h3>Secondary School Certificate (SSC)</h3>
+                <div class="edu-inst">Qadirabad Cantonment Public School</div>
+                <div class="edu-date">2018 – 2020</div>
+                <div class="edu-grade">GPA: 5.00 / 5.00 (Science)</div>
+                <div class="edu-loc"><i class="fa-solid fa-location-dot"></i> Natore, Bangladesh</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. TECHNICAL SKILLS SECTION -->
+    <section id="skills">
+        <h2 class="section-title">Technical <span>Skills</span></h2>
+        <div class="skills-grid">
+            
+            <div class="skill-card">
+                <h3><i class="fa-solid fa-code"></i> Languages</h3>
+                <div class="skill-tags">
+                    <span class="tag">C</span>
+                    <span class="tag">C++</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">HTML/CSS</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3><i class="fa-solid fa-cubes"></i> Frameworks</h3>
+                <div class="skill-tags">
+                    <span class="tag">React.js</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Express</span>
+                    <span class="tag">Spring Boot</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">Java Swing / JavaFX</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3><i class="fa-solid fa-microchip"></i> IoT & Hardware</h3>
+                <div class="skill-tags">
+                    <span class="tag">Arduino</span>
+                    <span class="tag">ESP32</span>
+                    <span class="tag">IR Sensors</span>
+                    <span class="tag">L298N</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3><i class="fa-solid fa-layer-group"></i> Design & UI/UX</h3>
+                <div class="skill-tags">
+                    <span class="tag">Figma</span>
+                    <span class="tag">UI/UX Design</span>
+                    <span class="tag">Web Design</span>
+                    <span class="tag">Glassmorphism</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3><i class="fa-solid fa-wrench"></i> Tools & Platforms</h3>
+                <div class="skill-tags">
+                    <span class="tag">Git</span>
+                    <span class="tag">GitHub</span>
+                    <span class="tag">Linux (Ubuntu)</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">MATLAB</span>
+                    <span class="tag">VS Code</span>
+                    <span class="tag">Docker</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. FEATURED PROJECTS SECTION -->
+    <section id="projects">
+        <h2 class="section-title">Featured <span>Projects</span></h2>
+        <div class="projects-grid">
+
+            <!-- Project 1 -->
+            <div class="project-card">
+                <span class="project-number">01</span>
+                <div>
+                    <h3 class="project-title">Campus Lost & Found System</h3>
+                    <p class="project-desc">Full-stack platform with passcode-based claim verification for recovering campus items easily.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">React</span>
+                        <span class="project-tag">Spring Boot</span>
+                        <span class="project-tag">JPA</span>
+                        <span class="project-tag">REST API</span>
+                    </div>
+                </div>
+                <a href="https://github.com/mahinsn123" class="project-link" target="_blank">View Source <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <span class="project-number">02</span>
+                <div>
+                    <h3 class="project-title">team_Clueless (GenAI App)</h3>
+                    <p class="project-desc">Full-stack AI web application featuring sleek Glassmorphism UI and Gemini 2.5-flash integration for fast reasoning.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">React</span>
+                        <span class="project-tag">Node.js</span>
+                        <span class="project-tag">Express</span>
+                        <span class="project-tag">GenAI</span>
+                    </div>
+                </div>
+                <a href="https://github.com/mahinsn123" class="project-link" target="_blank">View Source <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <span class="project-number">03</span>
+                <div>
+                    <h3 class="project-title">CoWork Space Booking API</h3>
+                    <p class="project-desc">RESTful multi-tenant API with JWT authentication for booking coworking rooms and managing staff.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">FastAPI</span>
+                        <span class="project-tag">JWT</span>
+                        <span class="project-tag">Docker</span>
+                    </div>
+                </div>
+                <a href="https://github.com/mahinsn123" class="project-link" target="_blank">View Source <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+                <span class="project-number">04</span>
+                <div>
+                    <h3 class="project-title">Wi-Fi Management System</h3>
+                    <p class="project-desc">Desktop management tool with a user dashboard to track active internet plans, usage, and payments.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Java Swing</span>
+                        <span class="project-tag">JDBC</span>
+                        <span class="project-tag">MySQL</span>
+                    </div>
+                </div>
+                <a href="https://github.com/mahinsn123" class="project-link" target="_blank">View Source <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card">
+                <span class="project-number">05</span>
+                <div>
+                    <h3 class="project-title">C-Like Expression Compiler</h3>
+                    <p class="project-desc">C-like expression compiler built for lexical analysis, syntax parsing, symbol table management, and error handling.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">C / C++</span>
+                        <span class="project-tag">Flex</span>
+                        <span class="project-tag">Bison</span>
+                        <span class="project-tag">Linux</span>
+                    </div>
+                </div>
+                <a href="https://github.com/mahinsn123" class="project-link" target="_blank">View Source <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-card">
+                <span class="project-number">06</span>
+                <div>
+                    <h3 class="project-title">Line Following Robot</h3>
+                    <p class="project-desc">Autonomous robot built using an IR sensor array for precise path tracking and ultrasonic sensors for obstacle detection.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Arduino</span>
+                        <span class="project-tag">C++</span>
+                        <span class="project-tag">IR Sensors</span>
+                    </div>
+                </div>
+                <a href="https://github.com/mahinsn123" class="project-link" target="_blank">View Source <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="project-card">
+                <span class="project-number">07</span>
+                <div>
+                    <h3 class="project-title">Bill Management System</h3>
+                    <p class="project-desc">Database-integrated desktop bill management application with admin generation panels and payment dashboards.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Java Swing</span>
+                        <span class="project-tag">JDBC</span>
+                        <span class="project-tag">MySQL</span>
+                        <span class="project-tag">UI/UX</span>
+                    </div>
+                </div>
+                <a href="https://github.com/mahinsn123" class="project-link" target="_blank">View Source <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Project 8 -->
+            <div class="project-card">
+                <span class="project-number">08</span>
+                <div>
+                    <h3 class="project-title">IFinance Desktop App</h3>
+                    <p class="project-desc">Desktop-based financial application featuring a modern JavaFX user interface backed by MySQL database storage.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Java</span>
+                        <span class="project-tag">JavaFX</span>
+                        <span class="project-tag">JDBC</span>
+                        <span class="project-tag">MySQL</span>
+                    </div>
+                </div>
+                <a href="https://github.com/mahinsn123" class="project-link" target="_blank">View Source <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 6. ACHIEVEMENTS SECTION -->
+    <section id="achievements">
+        <h2 class="section-title">Honors & <span>Achievements</span></h2>
+        <div class="achievements-grid">
+
+            <div class="achieve-card">
+                <div class="achieve-icon"><i class="fa-solid fa-trophy"></i></div>
+                <div class="achieve-info">
+                    <h3>IUT ICT Fest Hackathon 2026</h3>
+                    <p>Earned Certificate of Participation in national software hackathon competition.</p>
+                </div>
+            </div>
+
+            <div class="achieve-card">
+                <div class="achieve-icon"><i class="fa-solid fa-award"></i></div>
+                <div class="achieve-info">
+                    <h3>MARXCELLENCE 2026</h3>
+                    <p>Qualified for Round 2 in national-level business case competition.</p>
+                </div>
+            </div>
+
+            <div class="achieve-card">
+                <div class="achieve-icon"><i class="fa-solid fa-certificate"></i></div>
+                <div class="achieve-info">
+                    <h3>HackerRank Java Certificate</h3>
+                    <p>Validated core Java skills in OOP, Data Structures, and Problem Solving.</p>
+                </div>
+            </div>
+
+            <div class="achieve-card">
+                <div class="achieve-icon"><i class="fa-solid fa-seedling"></i></div>
+                <div class="achieve-info">
+                    <h3>3 Zero Business Competition</h3>
+                    <p>Awarded Certificate of Participation for innovative business presentation.</p>
+                </div>
+            </div>
+
+            <div class="achieve-card">
+                <div class="achieve-icon"><i class="fa-solid fa-users"></i></div>
+                <div class="achieve-info">
+                    <h3>BUP Computer Club</h3>
+                    <p>General Member (2025–Present) participating in tech workshops and coding contests.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 7. HOBBIES & INTERESTS SECTION -->
+    <section id="hobbies">
+        <h2 class="section-title">Hobbies & <span>Interests</span></h2>
         <div class="hobbies-grid">
             <div class="hobby-card">
                 <i class="fa-solid fa-cricket-bat-ball"></i>
                 <h3>Sports & Cricket</h3>
-                <p>Playing outdoor cricket and teamwork.</p>
+                <p>Playing outdoor sports like cricket to stay active and build teamwork.</p>
             </div>
             <div class="hobby-card">
                 <i class="fa-solid fa-gamepad"></i>
                 <h3>PC Gaming</h3>
-                <p>Immersive single-player games.</p>
+                <p>Enjoying immersive single-player narrative and strategy PC games.</p>
             </div>
             <div class="hobby-card">
                 <i class="fa-solid fa-wand-magic-sparkles"></i>
-                <h3>UI/UX Design</h3>
-                <p>Crafting sleek UI in Figma.</p>
+                <h3>UI/UX & Design</h3>
+                <p>Designing modern, intuitive web interfaces and app prototypes in Figma.</p>
             </div>
             <div class="hobby-card">
                 <i class="fa-brands fa-linux"></i>
                 <h3>Linux Systems</h3>
-                <p>Customizing Ubuntu & Terminal.</p>
+                <p>Customizing Ubuntu setups, shell scripting, and learning terminal workflows.</p>
             </div>
         </div>
     </section>
