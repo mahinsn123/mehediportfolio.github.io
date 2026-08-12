@@ -12,12 +12,17 @@
     <style>
         :root {
             --bg-color: #080d1a;
-            --card-bg: #0f172a;
+            --card-bg: #0b1329;
             --card-border: #1e293b;
             --accent-cyan: #06b6d4;
             --accent-blue: #3b82f6;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
+            --pill-bg: #111d38;
+            --pill-border: #233558;
+            --tag-green-bg: #064e3b;
+            --tag-green-border: #059669;
+            --tag-green-text: #34d399;
         }
 
         * {
@@ -279,7 +284,7 @@
         .icon-3 { bottom: 5px; left: 25px; }
         .icon-4 { top: 25px; left: 10px; }
 
-        /* Section Heading with Icon */
+        /* Section Heading */
         .section-box {
             margin-top: 50px;
         }
@@ -287,7 +292,7 @@
         .section-heading {
             font-size: 1.45rem;
             font-weight: 700;
-            margin-bottom: 18px;
+            margin-bottom: 22px;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -306,14 +311,154 @@
             color: var(--accent-cyan);
         }
 
-        /* Cards & Layouts */
+        /* General Info Card */
         .info-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             padding: 22px;
-            border-radius: 12px;
+            border-radius: 16px;
             position: relative;
             margin-bottom: 16px;
+        }
+
+        /* --- VERTICAL SKILLS CARDS (Image 1 Style) --- */
+        .skills-vertical-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .skill-group-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 20px 24px;
+            transition: 0.3s;
+        }
+
+        .skill-group-card:hover {
+            border-color: #334155;
+        }
+
+        .skill-group-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .skill-group-header i {
+            color: var(--accent-cyan);
+            font-size: 1.2rem;
+        }
+
+        .skill-group-header h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .skill-pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-pill {
+            background: var(--pill-bg);
+            border: 1px solid var(--pill-border);
+            color: #e2e8f0;
+            padding: 7px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .skill-pill:hover {
+            border-color: var(--accent-cyan);
+            color: #ffffff;
+        }
+
+        /* --- VERTICAL PROJECT CARDS (Image 2 Style) --- */
+        .projects-vertical-container {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .project-card-vertical {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 24px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .project-card-vertical:hover {
+            border-color: #334155;
+            transform: translateY(-2px);
+        }
+
+        .project-top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .project-icon-box {
+            width: 42px;
+            height: 42px;
+            background: #111d38;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #818cf8;
+            font-size: 1.2rem;
+        }
+
+        .project-github-link {
+            color: var(--text-muted);
+            font-size: 1.3rem;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+
+        .project-github-link:hover {
+            color: var(--accent-cyan);
+        }
+
+        .project-card-vertical h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .project-card-vertical p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 18px;
+        }
+
+        .project-tags-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .project-tag-pill {
+            background: rgba(5, 150, 105, 0.15);
+            border: 1px solid var(--tag-green-border);
+            color: var(--tag-green-text);
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
         }
 
         .grid-2 {
@@ -326,49 +471,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 16px;
-        }
-
-        .tag-pill {
-            background: #1e293b;
-            color: #cbd5e1;
-            font-size: 0.75rem;
-            padding: 4px 10px;
-            border-radius: 6px;
-            display: inline-block;
-            border: 1px solid #334155;
-        }
-
-        .tags-flex {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin: 10px 0;
-        }
-
-        .project-num {
-            position: absolute;
-            top: 16px;
-            right: 20px;
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: #1e293b;
-        }
-
-        .link-btn {
-            color: var(--accent-cyan);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 6px;
-            transition: 0.2s;
-        }
-
-        .link-btn:hover {
-            text-decoration: underline;
-            color: #38bdf8;
         }
 
         /* Hobbies Section */
@@ -456,7 +558,7 @@
                         <span class="sub">Department</span>
                     </div>
                     <div class="badge-box">
-                        <span class="title">8+</span>
+                        <span class="title">9+</span>
                         <span class="sub">Projects Built</span>
                     </div>
                     <div class="badge-box">
@@ -467,8 +569,8 @@
 
                 <!-- Actions -->
                 <div class="hero-actions">
-                    <a href="Final cv mehedi 3046_2.pdf" download="MD_Mehedi_Hassan_CV.pdf" class="btn-cv">
-                        <i class="fa-solid fa-download"></i> Download CV
+                    <a href="Final cv mehedi 3046_2.pdf" target="_blank" class="btn-cv">
+                        <i class="fa-solid fa-file-pdf"></i> View CV
                     </a>
                     <a href="#projects" class="btn-projects"><i class="fa-brands fa-github"></i> Projects</a>
                     <a href="https://github.com/mahinsn123" target="_blank" class="social-icon"><i class="fa-brands fa-github"></i></a>
@@ -537,138 +639,249 @@
             </div>
         </section>
 
-        <!-- Technical Skills Section -->
+        <!-- Technical Skills Section (Vertically Arranged Cards as requested) -->
         <section id="skills" class="section-box">
-            <h2 class="section-heading"><i class="fa-solid fa-code"></i> Technical <span>Skills</span></h2>
-            <div class="info-card">
-                <div style="margin-bottom: 12px;">
-                    <strong style="color: var(--accent-cyan); font-size: 0.88rem; display: block; margin-bottom: 6px;">Programming Languages:</strong>
-                    <div class="tags-flex">
-                        <span class="tag-pill">C</span><span class="tag-pill">C++</span><span class="tag-pill">Java</span><span class="tag-pill">Python</span><span class="tag-pill">HTML</span><span class="tag-pill">CSS</span><span class="tag-pill">SQL</span>
+            <h2 class="section-heading"><i class="fa-solid fa-code"></i> Languages, frameworks & tools I work with</h2>
+            
+            <div class="skills-vertical-container">
+                
+                <!-- Languages -->
+                <div class="skill-group-card">
+                    <div class="skill-group-header">
+                        <i class="fa-solid fa-code"></i>
+                        <h3>Languages</h3>
+                    </div>
+                    <div class="skill-pill-list">
+                        <span class="skill-pill">C</span>
+                        <span class="skill-pill">C++</span>
+                        <span class="skill-pill">Java</span>
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">HTML5</span>
+                        <span class="skill-pill">CSS3</span>
+                        <span class="skill-pill">SQL</span>
                     </div>
                 </div>
 
-                <div style="margin-bottom: 12px;">
-                    <strong style="color: var(--accent-cyan); font-size: 0.88rem; display: block; margin-bottom: 6px;">Frameworks & Web:</strong>
-                    <div class="tags-flex">
-                        <span class="tag-pill">React.js</span><span class="tag-pill">Node.js</span><span class="tag-pill">Spring Boot</span><span class="tag-pill">FastAPI</span><span class="tag-pill">Java Swing</span><span class="tag-pill">JavaFX</span>
+                <!-- Backend -->
+                <div class="skill-group-card">
+                    <div class="skill-group-header">
+                        <i class="fa-solid fa-server"></i>
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="skill-pill-list">
+                        <span class="skill-pill">Node.js</span>
+                        <span class="skill-pill">Spring Boot</span>
+                        <span class="skill-pill">FastAPI</span>
+                        <span class="skill-pill">MySQL</span>
+                        <span class="skill-pill">JDBC</span>
                     </div>
                 </div>
 
-                <div style="margin-bottom: 12px;">
-                    <strong style="color: var(--accent-cyan); font-size: 0.88rem; display: block; margin-bottom: 6px;">IoT & Embedded Systems:</strong>
-                    <div class="tags-flex">
-                        <span class="tag-pill">Arduino</span><span class="tag-pill">ESP32</span><span class="tag-pill">IR Sensors</span><span class="tag-pill">L298N</span>
+                <!-- Frontend -->
+                <div class="skill-group-card">
+                    <div class="skill-group-header">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <h3>Frontend & Desktop</h3>
+                    </div>
+                    <div class="skill-pill-list">
+                        <span class="skill-pill">React.js</span>
+                        <span class="skill-pill">Java Swing</span>
+                        <span class="skill-pill">JavaFX</span>
                     </div>
                 </div>
 
-                <div style="margin-bottom: 12px;">
-                    <strong style="color: var(--accent-cyan); font-size: 0.88rem; display: block; margin-bottom: 6px;">Design & UI/UX:</strong>
-                    <div class="tags-flex">
-                        <span class="tag-pill">Figma</span><span class="tag-pill">UI/UX Design</span><span class="tag-pill">Web Design</span>
+                <!-- IoT & Embedded -->
+                <div class="skill-group-card">
+                    <div class="skill-group-header">
+                        <i class="fa-solid fa-microchip"></i>
+                        <h3>IoT & Embedded</h3>
+                    </div>
+                    <div class="skill-pill-list">
+                        <span class="skill-pill">Arduino</span>
+                        <span class="skill-pill">ESP32</span>
+                        <span class="skill-pill">IR Sensors</span>
+                        <span class="skill-pill">L298N Driver</span>
                     </div>
                 </div>
 
-                <div>
-                    <strong style="color: var(--accent-cyan); font-size: 0.88rem; display: block; margin-bottom: 6px;">Tools & Platforms:</strong>
-                    <div class="tags-flex">
-                        <span class="tag-pill">Git</span><span class="tag-pill">GitHub</span><span class="tag-pill">Linux (Ubuntu)</span><span class="tag-pill">VS Code</span><span class="tag-pill">MySQL</span><span class="tag-pill">MATLAB</span><span class="tag-pill">Docker</span>
+                <!-- Design & UI/UX -->
+                <div class="skill-group-card">
+                    <div class="skill-group-header">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                        <h3>Design & UI/UX</h3>
+                    </div>
+                    <div class="skill-pill-list">
+                        <span class="skill-pill">Figma</span>
+                        <span class="skill-pill">UI/UX Design</span>
+                        <span class="skill-pill">Wireframing</span>
+                        <span class="skill-pill">Prototyping</span>
                     </div>
                 </div>
+
+                <!-- Tools & Platforms -->
+                <div class="skill-group-card">
+                    <div class="skill-group-header">
+                        <i class="fa-solid fa-wrench"></i>
+                        <h3>Tools & Platforms</h3>
+                    </div>
+                    <div class="skill-pill-list">
+                        <span class="skill-pill">Git</span>
+                        <span class="skill-pill">GitHub</span>
+                        <span class="skill-pill">Linux (Ubuntu)</span>
+                        <span class="skill-pill">VS Code</span>
+                        <span class="skill-pill">MATLAB</span>
+                        <span class="skill-pill">Docker</span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- Projects Section -->
+        <!-- Projects Section (Vertically Arranged Cards as requested) -->
         <section id="projects" class="section-box">
-            <h2 class="section-heading"><i class="fa-solid fa-diagram-project"></i> Projects <span>(All 8)</span></h2>
-            <div class="cards-list">
+            <h2 class="section-heading"><i class="fa-solid fa-diagram-project"></i> Projects</h2>
+            
+            <div class="projects-vertical-container">
 
                 <!-- 01 -->
-                <div class="info-card">
-                    <span class="project-num">01</span>
-                    <h3 style="font-size: 1.15rem;">Campus Lost & Found System</h3>
-                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">Full-stack platform with passcode-based claim verification for recovering campus items.</p>
-                    <div class="tags-flex">
-                        <span class="tag-pill">React</span><span class="tag-pill">Spring Boot</span><span class="tag-pill">JPA</span><span class="tag-pill">REST API</span>
+                <div class="project-card-vertical">
+                    <div class="project-top-bar">
+                        <div class="project-icon-box"><i class="fa-solid fa-magnifying-glass-location"></i></div>
+                        <a href="https://github.com/mahinsn123/campus-lost-and-found" target="_blank" class="project-github-link" title="GitHub Repo"><i class="fa-brands fa-github"></i></a>
                     </div>
-                    <a href="https://github.com/mahinsn123/campus-lost-and-found" target="_blank" class="link-btn"><i class="fa-brands fa-github"></i> View Source →</a>
+                    <h3>Campus Lost & Found System</h3>
+                    <p>Full-stack platform with passcode-based claim verification for recovering campus items easily and securely.</p>
+                    <div class="project-tags-row">
+                        <span class="project-tag-pill">React</span>
+                        <span class="project-tag-pill">Spring Boot</span>
+                        <span class="project-tag-pill">JPA</span>
+                        <span class="project-tag-pill">REST API</span>
+                    </div>
                 </div>
 
                 <!-- 02 -->
-                <div class="info-card">
-                    <span class="project-num">02</span>
-                    <h3 style="font-size: 1.15rem;">team_Clueless (GenAI Web Application)</h3>
-                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">Full-stack AI web app featuring Glassmorphism UI and Gemini 2.5-flash for fast reasoning.</p>
-                    <div class="tags-flex">
-                        <span class="tag-pill">React</span><span class="tag-pill">Node.js</span><span class="tag-pill">Express</span><span class="tag-pill">GenAI</span>
+                <div class="project-card-vertical">
+                    <div class="project-top-bar">
+                        <div class="project-icon-box"><i class="fa-solid fa-brain"></i></div>
+                        <a href="https://github.com/Fahim-p2062/team_Cluless" target="_blank" class="project-github-link" title="GitHub Repo"><i class="fa-brands fa-github"></i></a>
                     </div>
-                    <a href="https://github.com/Fahim-p2062/team_Cluless" target="_blank" class="link-btn"><i class="fa-brands fa-github"></i> View Source →</a>
+                    <h3>team_Clueless (GenAI Web Application)</h3>
+                    <p>Full-stack AI web app featuring Glassmorphism UI and Gemini 2.5-flash integration for ultra-fast reasoning.</p>
+                    <div class="project-tags-row">
+                        <span class="project-tag-pill">React</span>
+                        <span class="project-tag-pill">Node.js</span>
+                        <span class="project-tag-pill">Express</span>
+                        <span class="project-tag-pill">GenAI</span>
+                    </div>
                 </div>
 
                 <!-- 03 -->
-                <div class="info-card">
-                    <span class="project-num">03</span>
-                    <h3 style="font-size: 1.15rem;">CoWork - Coworking Space Booking API</h3>
-                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">RESTful multi-tenant API with JWT authentication for booking rooms and managing staff.</p>
-                    <div class="tags-flex">
-                        <span class="tag-pill">Python</span><span class="tag-pill">FastAPI</span><span class="tag-pill">JWT</span><span class="tag-pill">Docker</span>
+                <div class="project-card-vertical">
+                    <div class="project-top-bar">
+                        <div class="project-icon-box"><i class="fa-solid fa-pen-nib"></i></div>
+                        <span class="project-github-link" style="opacity: 0.3;"><i class="fa-brands fa-figma"></i></span>
                     </div>
-                    <!-- নির্দিষ্ট লিঙ্ক না থাকায় বাটনে লিঙ্ক নেই -->
+                    <h3>E-Commerce Web & Mobile UI/UX Design</h3>
+                    <p>Comprehensive modern UI/UX prototype featuring user-centered design, interactive wireframes, and high-fidelity Figma components.</p>
+                    <div class="project-tags-row">
+                        <span class="project-tag-pill">Figma</span>
+                        <span class="project-tag-pill">UI/UX</span>
+                        <span class="project-tag-pill">Wireframing</span>
+                        <span class="project-tag-pill">Prototyping</span>
+                    </div>
                 </div>
 
                 <!-- 04 -->
-                <div class="info-card">
-                    <span class="project-num">04</span>
-                    <h3 style="font-size: 1.15rem;">Wi-Fi Management System</h3>
-                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">Desktop management tool with user dashboard to track active plans, usage, and payments.</p>
-                    <div class="tags-flex">
-                        <span class="tag-pill">Java Swing</span><span class="tag-pill">JDBC</span><span class="tag-pill">MySQL</span>
+                <div class="project-card-vertical">
+                    <div class="project-top-bar">
+                        <div class="project-icon-box"><i class="fa-solid fa-building"></i></div>
+                        <span class="project-github-link" style="opacity: 0.3;"><i class="fa-brands fa-github"></i></span>
                     </div>
-                    <a href="https://github.com/Istiack-102/Wi-Fi-Management-System" target="_blank" class="link-btn"><i class="fa-brands fa-github"></i> View Source →</a>
+                    <h3>CoWork - Coworking Space Booking API</h3>
+                    <p>RESTful multi-tenant API with JWT authentication for booking rooms and managing workspace staff.</p>
+                    <div class="project-tags-row">
+                        <span class="project-tag-pill">Python</span>
+                        <span class="project-tag-pill">FastAPI</span>
+                        <span class="project-tag-pill">JWT</span>
+                        <span class="project-tag-pill">Docker</span>
+                    </div>
                 </div>
 
                 <!-- 05 -->
-                <div class="info-card">
-                    <span class="project-num">05</span>
-                    <h3 style="font-size: 1.15rem;">IFinance</h3>
-                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">Desktop-based financial application with JavaFX modern UI and MySQL database storage.</p>
-                    <div class="tags-flex">
-                        <span class="tag-pill">Java</span><span class="tag-pill">JavaFX</span><span class="tag-pill">JDBC</span><span class="tag-pill">MySQL</span>
+                <div class="project-card-vertical">
+                    <div class="project-top-bar">
+                        <div class="project-icon-box"><i class="fa-solid fa-wifi"></i></div>
+                        <a href="https://github.com/Istiack-102/Wi-Fi-Management-System" target="_blank" class="project-github-link" title="GitHub Repo"><i class="fa-brands fa-github"></i></a>
                     </div>
-                    <a href="https://github.com/asmraiyan-crp/IFinance" target="_blank" class="link-btn"><i class="fa-brands fa-github"></i> View Source →</a>
+                    <h3>Wi-Fi Management System</h3>
+                    <p>Desktop management tool with user dashboard to track active plans, internet usage, and billing payments.</p>
+                    <div class="project-tags-row">
+                        <span class="project-tag-pill">Java Swing</span>
+                        <span class="project-tag-pill">JDBC</span>
+                        <span class="project-tag-pill">MySQL</span>
+                    </div>
                 </div>
 
                 <!-- 06 -->
-                <div class="info-card">
-                    <span class="project-num">06</span>
-                    <h3 style="font-size: 1.15rem;">C-Like Expression Compiler</h3>
-                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">C-like expression compiler for lexical analysis, syntax parsing, symbol table, and error handling.</p>
-                    <div class="tags-flex">
-                        <span class="tag-pill">C</span><span class="tag-pill">FlexBison</span><span class="tag-pill">Linux</span>
+                <div class="project-card-vertical">
+                    <div class="project-top-bar">
+                        <div class="project-icon-box"><i class="fa-solid fa-wallet"></i></div>
+                        <a href="https://github.com/asmraiyan-crp/IFinance" target="_blank" class="project-github-link" title="GitHub Repo"><i class="fa-brands fa-github"></i></a>
                     </div>
-                    <!-- নির্দিষ্ট লিঙ্ক না থাকায় বাটনে লিঙ্ক নেই -->
+                    <h3>IFinance</h3>
+                    <p>Desktop-based financial application with JavaFX modern interactive UI and MySQL database storage.</p>
+                    <div class="project-tags-row">
+                        <span class="project-tag-pill">Java</span>
+                        <span class="project-tag-pill">JavaFX</span>
+                        <span class="project-tag-pill">JDBC</span>
+                        <span class="project-tag-pill">MySQL</span>
+                    </div>
                 </div>
 
                 <!-- 07 -->
-                <div class="info-card">
-                    <span class="project-num">07</span>
-                    <h3 style="font-size: 1.15rem;">Line Following Robot Using Arduino</h3>
-                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">Autonomous robot using IR sensor array for path tracking and ultrasonic sensor for obstacles.</p>
-                    <div class="tags-flex">
-                        <span class="tag-pill">Arduino / C++</span><span class="tag-pill">IR Sensors</span><span class="tag-pill">L298N</span>
+                <div class="project-card-vertical">
+                    <div class="project-top-bar">
+                        <div class="project-icon-box"><i class="fa-solid fa-terminal"></i></div>
+                        <span class="project-github-link" style="opacity: 0.3;"><i class="fa-brands fa-github"></i></span>
                     </div>
-                    <!-- নির্দিষ্ট লিঙ্ক না থাকায় বাটনে লিঙ্ক নেই -->
+                    <h3>C-Like Expression Compiler</h3>
+                    <p>C-like expression compiler for lexical analysis, syntax parsing, symbol table generation, and error handling.</p>
+                    <div class="project-tags-row">
+                        <span class="project-tag-pill">C</span>
+                        <span class="project-tag-pill">FlexBison</span>
+                        <span class="project-tag-pill">Linux</span>
+                    </div>
                 </div>
 
                 <!-- 08 -->
-                <div class="info-card">
-                    <span class="project-num">08</span>
-                    <h3 style="font-size: 1.15rem;">Database-Integrated Bill Management System</h3>
-                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">Desktop bill management system with admin panel for generation and payment dashboards.</p>
-                    <div class="tags-flex">
-                        <span class="tag-pill">Java Swing</span><span class="tag-pill">JDBC</span><span class="tag-pill">MySQL</span><span class="tag-pill">UI/UX</span>
+                <div class="project-card-vertical">
+                    <div class="project-top-bar">
+                        <div class="project-icon-box"><i class="fa-solid fa-robot"></i></div>
+                        <span class="project-github-link" style="opacity: 0.3;"><i class="fa-brands fa-github"></i></span>
                     </div>
-                    <!-- নির্দিষ্ট লিঙ্ক না থাকায় বাটনে লিঙ্ক নেই -->
+                    <h3>Line Following Robot Using Arduino</h3>
+                    <p>Autonomous robot using IR sensor array for path tracking and ultrasonic sensor for real-time obstacle detection.</p>
+                    <div class="project-tags-row">
+                        <span class="project-tag-pill">Arduino / C++</span>
+                        <span class="project-tag-pill">IR Sensors</span>
+                        <span class="project-tag-pill">L298N</span>
+                    </div>
+                </div>
+
+                <!-- 09 -->
+                <div class="project-card-vertical">
+                    <div class="project-top-bar">
+                        <div class="project-icon-box"><i class="fa-solid fa-receipt"></i></div>
+                        <span class="project-github-link" style="opacity: 0.3;"><i class="fa-brands fa-github"></i></span>
+                    </div>
+                    <h3>Database-Integrated Bill Management System</h3>
+                    <p>Desktop bill management system with admin panel for generation and payment management dashboards.</p>
+                    <div class="project-tags-row">
+                        <span class="project-tag-pill">Java Swing</span>
+                        <span class="project-tag-pill">JDBC</span>
+                        <span class="project-tag-pill">MySQL</span>
+                        <span class="project-tag-pill">UI/UX</span>
+                    </div>
                 </div>
 
             </div>
@@ -683,7 +896,7 @@
                     <span style="color: var(--accent-cyan); font-size: 0.8rem; font-weight: 600;">Participant</span>
                     <h3 style="font-size: 1.05rem; margin-top: 2px;"><i class="fa-solid fa-award" style="color: #f59e0b;"></i> IUT ICT Fest Hackathon 2026</h3>
                     <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px; margin-bottom: 8px;">Earned Certificate of Participation in software hackathon.</p>
-                    <a href="https://github.com/Fahim-p2062/ICT_Fest_Hackathon_Preliminary_byBUP_blocker" target="_blank" class="link-btn"><i class="fa-brands fa-github"></i> Hackathon Project Repo →</a>
+                    <a href="https://github.com/Fahim-p2062/ICT_Fest_Hackathon_Preliminary_byBUP_blocker" target="_blank" style="color: var(--accent-cyan); text-decoration: none; font-size: 0.85rem; font-weight: 600;"><i class="fa-brands fa-github"></i> Hackathon Project Repo →</a>
                 </div>
 
                 <div class="info-card">
@@ -710,13 +923,26 @@
         <!-- Co-curricular Activities Section -->
         <section id="activities" class="section-box">
             <h2 class="section-heading"><i class="fa-solid fa-people-group"></i> Co-curricular <span>Activities</span></h2>
-            <div class="info-card">
-                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-                    <h3 style="font-size: 1.1rem;">BUP Computer Club</h3>
-                    <span style="color: var(--accent-cyan); font-size: 0.85rem; font-weight: 600;">2025 – Present</span>
+            <div class="cards-list">
+
+                <div class="info-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                        <h3 style="font-size: 1.1rem;">BUP Computer Club</h3>
+                        <span style="color: var(--accent-cyan); font-size: 0.85rem; font-weight: 600;">2025 – Present</span>
+                    </div>
+                    <p style="color: #10b981; font-size: 0.88rem; margin: 4px 0;">General Member</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem;">Actively participating in tech workshops, competitive programming contests, and club-organized tech events.</p>
                 </div>
-                <p style="color: #10b981; font-size: 0.88rem; margin: 4px 0;">General Member</p>
-                <p style="color: var(--text-muted); font-size: 0.88rem;">Actively participating in tech workshops, competitive programming contests, and club-organized tech events.</p>
+
+                <div class="info-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                        <h3 style="font-size: 1.1rem;">Adamjee Cantonment College Robotics Club</h3>
+                        <span style="color: var(--accent-cyan); font-size: 0.85rem; font-weight: 600;">2021 – 2022</span>
+                    </div>
+                    <p style="color: #10b981; font-size: 0.88rem; margin: 4px 0;">Class Representative (CR)</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem;">Coordinated club activities, led team communication, and facilitated robotics workshop management.</p>
+                </div>
+
             </div>
         </section>
 
